@@ -87,7 +87,7 @@ main{
 
     .title{
         font-size: 70px;
-        font-family: Dongle;
+        font-family: "Dongle";
         text-align: center;
         color: #c0392b;
         text-shadow: 0px 0px 10px white;
@@ -144,6 +144,23 @@ main{
     .product-list::-webkit-scrollbar-thumb{
         background-color: #c0392b;
         border-radius: 4px;
+    }
+
+    .no-products{
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        font-size: 40px;
+        font-family: "Dongle";
+    }
+    .no-products img{
+        width: 40px;
+        height: 40px;
+        margin: 10px;
     }
 }
 
@@ -214,5 +231,23 @@ main{
     
     .product-list::-webkit-scrollbar{
         width: 8px;
+    }
+
+    .no-products{
+        opacity: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        font-size: 25px;
+        font-family: "Dongle";
+    }
+    .no-products img{
+        width: 40px;
+        height: 40px;
+        margin: 10px;
     }
 }

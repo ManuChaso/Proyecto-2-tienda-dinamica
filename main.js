@@ -24,6 +24,7 @@ const sellerFilter = document.querySelector('.seller');
 const submit = document.querySelector('.submit');
 const wipeFilter = document.querySelector('.wipe-filter');
 const productList = document.querySelector('.product-list');
+const noProduct = document.querySelector('.no-products');
 
 //eventos
 submit.addEventListener('click', handleSubmmit);
@@ -48,6 +49,12 @@ function showProducts(){
     DataBase.forEach(element =>{
         productList.innerHTML += productTemplate(element);
     });
+
+    if(productList.childNodes.length <= 0){
+        noProduct.style.opacity = "1";
+    }else{
+        noProduct.style.opacity = "0"
+    }
 }
 
 //Función que se encarga de recoger los inputs y filtrar los productos
@@ -72,7 +79,13 @@ function handleSubmmit() {
         if(checkName && checkPrice && checkSeller){
             productList.innerHTML += productTemplate(element);
         }
-    })
+    });
+
+    if(productList.childNodes.length <= 0){
+        noProduct.style.opacity = "1";
+    }else{
+        noProduct.style.opacity = "0";
+    }
 }
 
 //Llamada a la funcion showProducts para que se muestre la lista completa de productos al cargar la pagina
